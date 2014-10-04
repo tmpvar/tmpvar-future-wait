@@ -42,7 +42,6 @@ function waitForFutures(args, fn) {
         }
       })
     } else {
-      console.log('resolve now', i, args[i])
       resolved[i] = args[i];
       pending--;
     }
