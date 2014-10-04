@@ -1,8 +1,32 @@
 {
-  "dependencies" : {
+  "dependencies": {
     "tmpvar-future": "^1.1.0"
   },
   "devDependencies": {
     "tape": "^3.0.0"
-  }
+  },
+  "name": "tmpvar-future-wait",
+  "version": "1.0.0",
+  "description": "wait for an array of tmpvar-futures to complete",
+  "main": "tmpvar-future-wait.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmpvar/tmpvar-future-wait.git"
+  },
+  "keywords": [
+    "future",
+    "tmpvar",
+    "sync",
+    "join",
+    "flow-control"
+  ],
+  "author": "Elijah Insua <tmpvar@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tmpvar/tmpvar-future-wait/issues"
+  },
+  "homepage": "https://github.com/tmpvar/tmpvar-future-wait"
 }

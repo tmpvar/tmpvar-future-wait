@@ -3,7 +3,6 @@ var wait = require('./tmpvar-future-wait');
 var future = require('tmpvar-future');
 
 test('resolves immediately when passed primitives', function(t) {
-
   var f = wait(1, 'a', false, null, [], {}, function noop() {}, function(err, args) {
     t.equal(args[0], 1);
     t.equal(args[1], 'a');
@@ -14,7 +13,6 @@ test('resolves immediately when passed primitives', function(t) {
     t.equal(typeof args[6], 'function');
     t.end();
   });
-
 });
 
 test('returns a future', function(t) {
