@@ -4,10 +4,14 @@ var future = require('tmpvar-future');
 
 test('resolves immediately when passed primitives', function(t) {
 
-  var f = wait(1, 'a', function(err, args) {
-    called = true;
+  var f = wait(1, 'a', false, null, [], {}, function noop() {}, function(err, args) {
     t.equal(args[0], 1);
     t.equal(args[1], 'a');
+    t.equal(args[2], false);
+    t.equal(args[3], null);
+    t.deepEqual(args[4], []);
+    t.deepEqual(args[5], {});
+    t.equal(typeof args[6], 'function');
     t.end();
   });
 

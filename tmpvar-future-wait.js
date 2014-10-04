@@ -19,7 +19,9 @@ function waitForFutures(args, fn) {
     args = arga;
   }
 
-  if (typeof args[argl-1] === 'function') {
+  var lastArg = args[argl-1];
+
+  if (typeof lastArg === 'function' && !lastArg.isFuture) {
     // setup the passed callback as a callback on the future
     f(args.pop());
   }
@@ -28,7 +30,7 @@ function waitForFutures(args, fn) {
 
   var pending = args.length;
   args.forEach(function(arg, i) {
-    if (typeof arg === 'function') {
+    if (typeof arg === 'function' && arg.isFuture) {
       arg(function waitForArgsListener(e, r) {
         if (e) {
           return fn(e);
