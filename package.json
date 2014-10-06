@@ -6,7 +6,7 @@
     "tape": "^3.0.0"
   },
   "name": "tmpvar-future-wait",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wait for an array of tmpvar-futures to complete",
   "main": "tmpvar-future-wait.js",
   "scripts": {
