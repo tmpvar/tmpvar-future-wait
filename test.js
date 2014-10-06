@@ -43,3 +43,20 @@ test('waits for all futures', function(t) {
 
   f2(null, 2);
 });
+
+test('handle array and callback', function(t) {
+  var f1 = future();
+  var f2 = future();
+
+  wait([f1, f2], function(err, args) {
+    t.equal(args[0], 1);
+    t.equal(args[1], 2)
+    t.end();
+  });
+
+  process.nextTick(function() {
+    f1(null, 1);
+  });
+
+  f2(null, 2);
+});

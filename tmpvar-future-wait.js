@@ -24,6 +24,8 @@ function waitForFutures(args, fn) {
   if (typeof lastArg === 'function' && !lastArg.isFuture) {
     // setup the passed callback as a callback on the future
     f(args.pop());
+  } else if (typeof fn === 'function') {
+    f(fn);
   }
 
   var resolved = Array(args.length);
